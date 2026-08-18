@@ -1,2 +1,16 @@
-<main><h1>My Angular App</h1></main>
-spline
+<main>
+  <h1>Title: {{ title }}</h1>
+  <div>
+    <p>Name: {{ person.name }}</p>
+    <p>Age: {{ person.age }}</p>
+  </div>
+
+  <a href="" [title]="tooltip">Link</a>
+
+  <!-- style -->
+  <p class="red"></p>
+  <p style="color: red">Red</p>
+  <!--  -->
+  <p [class]="cssClass"></p>
+  <p [style]="inlineStyle">Blue</p>
+</main>
