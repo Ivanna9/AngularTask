@@ -1,16 +1,12 @@
-<main>
-  <h1>Title: {{ title }}</h1>
-  <div>
-    <p>Name: {{ person.name }}</p>
-    <p>Age: {{ person.age }}</p>
-  </div>
+<!-- <h1>{{ 'шото непонятне бал бла бла' | titlecase }}</h1>
+<h1>{{ 'шото непонятне бал бла бла' | lowercase }}</h1>
+<h1>{{ 'шото непонятне бал бла бла' | uppercase }}</h1> -->
 
-  <a href="" [title]="tooltip">Link</a>
+<!-- <p>{{ person | json }}</p>
 
-  <!-- style -->
-  <p class="red"></p>
-  <p style="color: red">Red</p>
-  <!--  -->
-  <p [class]="cssClass"></p>
-  <p [style]="inlineStyle">Blue</p>
-</main>
+<h1>{{ 'шото непонятне бла бла бла' | slice: 0 : 5 }}</h1> -->
+
+<p>{{ someDate | date }}</p>
+<p>{{ someDate }}</p>
+
+<p>{{ someDate | date: 'yyyy-MM-dd' | slice: 0 : 10 }}</p>
