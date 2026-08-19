@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CutTextPipe } from './pipes/cut-text-pipe';
+import { SortDataPipe } from './pipes/sort-data-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, CutTextPipe],
+  imports: [CommonModule, SortDataPipe],
   templateUrl: './app.html',
-  styleUrl: './app.css',
 })
-export class App {}
+export class App {
+  ageOfPerson = [{ age: 35 }, { age: 26 }, { age: 30 }];
+
+  private cdr = inject(ChangeDetectorRef);
+  constructor() {
+    setTimeout(() => {
+      this.ageOfPerson.push({ age: 10 });
+      this.cdr.detectChanges();
+    }, 2000);
+  }
+}
