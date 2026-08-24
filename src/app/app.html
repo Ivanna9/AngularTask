@@ -1,1 +1,9 @@
-<app-child [childColor]="'red'" [staticProp]="'test'"></app-child>
+<app-child
+  [childColor]="color"
+  [currentName]="currentName"
+  [staticProp]="' Hello from the App'"
+  (nameChange)="setNewName($event)"
+>
+</app-child>
+
+<p>current name in App: {{ currentName }}</p>
