@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, model } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,12 +7,9 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './child.css',
 })
 export class Child {
-  childColor = input.required<string>();
-  staticProp = input<string>('by default');
-  currentName = input<string>('John Doe');
-  nameChange = output<string>();
+  name = model<string>('John Doe');
 
-  changeName() {
-    this.nameChange.emit('The name has been changed from Child');
+  updateName() {
+    this.name.set('The name has been changed from Child');
   }
 }
